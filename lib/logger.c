@@ -40,6 +40,10 @@ static const char *log_level_name[] = {"FATAL", "ERROR", "WARN",
 #define CYAN "\x1b[36m"
 #define RESET "\033[0m"
 
+#ifdef __OpenBSD__
+#define LOG_MAKEPRI(fac, pri) ((fac) | (pri))
+#endif
+
 #define COLOR(x)                                                               \
 	do {                                                                   \
 		if (color)                                                     \

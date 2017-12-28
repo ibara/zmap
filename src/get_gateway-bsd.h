@@ -13,6 +13,10 @@
 #error "Don't include both get_gateway-bsd.h and get_gateway-linux.h"
 #endif
 
+#ifdef __OpenBSD__
+#include <net/if_arp.h>
+#endif
+
 #include <net/route.h>
 #include <net/if.h>
 #include <net/if_dl.h>

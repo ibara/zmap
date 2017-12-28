@@ -18,8 +18,11 @@
 #include "../lib/includes.h"
 #include "../lib/logger.h"
 
+#ifdef __OpenBSD__
 #include <pcap.h>
+#else
 #include <pcap/pcap.h>
+#endif
 
 #include "recv-internal.h"
 #include "state.h"

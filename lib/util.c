@@ -301,6 +301,13 @@ int set_cpu(uint32_t core)
 	return EXIT_SUCCESS;
 }
 
+#elif defined(__OpenBSD__)
+
+int set_cpu(uint32_t core)
+{
+	return EXIT_SUCCESS;
+}
+
 #else
 
 #if defined(__FreeBSD__)

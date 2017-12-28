@@ -18,7 +18,12 @@
 #include <pwd.h>
 #include <time.h>
 
+#ifdef __OpenBSD__
+#include <pcap.h>
+#else
 #include <pcap/pcap.h>
+#endif
+
 #include <json.h>
 
 #include <pthread.h>

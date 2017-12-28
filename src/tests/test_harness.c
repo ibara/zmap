@@ -19,7 +19,12 @@
 #include <time.h>
 #include <getopt.h>
 
+#ifdef __OpenBSD__
+#include <pcap.h>
+#else
 #include <pcap/pcap.h>
+#endif
+
 #include <json.h>
 #include <pthread.h>
 

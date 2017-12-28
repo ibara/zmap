@@ -42,12 +42,12 @@ static inline int send_run_init(sock_t sock);
 // Include the right implementations
 #if defined(PFRING)
 #include "send-pfring.h"
-#elif defined(__APPLE__) || defined(__FreeBSD__) || defined(__NetBSD__) ||     \
-    defined(__DragonFly__)
+#elif defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__) ||    \
+    defined(__NetBSD__) || defined(__DragonFly__)
 #include "send-bsd.h"
 #else /* LINUX */
 #include "send-linux.h"
-#endif /* __APPLE__ || __FreeBSD__ || __NetBSD__ || __DragonFly__ */
+#endif /* __APPLE__ || __FreeBSD__ || __OpenBSD__ || __NetBSD__ || __DragonFly__ */
 
 // The iterator over the cyclic group
 

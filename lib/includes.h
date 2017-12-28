@@ -11,6 +11,11 @@
 #define __USE_BSD
 #endif
 
+#if defined(__OpenBSD__)
+#include <sys/socket.h>
+#include <sys/time.h>
+#endif
+
 #include <sys/types.h>
 #include <netinet/in.h>
 #include <netinet/ip.h>
@@ -21,6 +26,9 @@
 #if defined(__NetBSD__)
 #define ICMP_UNREACH_PRECEDENCE_CUTOFF ICMP_UNREACH_PREC_CUTOFF
 #include <net/if_ether.h>
+#elif defined(__OpenBSD__)
+#include <net/if_arp.h>
+#include <netinet/if_ether.h>
 #else
 #include <net/ethernet.h>
 #endif

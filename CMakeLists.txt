@@ -16,12 +16,16 @@ else()
     set(USING_GCC "YES")
 endif()
 
-if("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD" OR "${CMAKE_SYSTEM_NAME}" MATCHES "NetBSD" OR "${CMAKE_SYSTEM_NAME}" MATCHES "DragonFly")
+if("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD" OR "${CMAKE_SYSTEM_NAME}" MATCHES "NetBSD" OR "${CMAKE_SYSTEM_NAME}" MATCHES "OpenBSD" OR "${CMAKE_SYSTEM_NAME}" MATCHES "DragonFly")
     set(BSD "YES")
 endif()
 
 if("${CMAKE_SYSTEM_NAME}" MATCHES "NetBSD")
     set(NetBSD "YES")
+endif()
+
+if("${CMAKE_SYSTEM_NAME}" MATCHES "OpenBSD")
+    set(OpenBSD "YES")
 endif()
 
 # Hardening and warnings for building with gcc
